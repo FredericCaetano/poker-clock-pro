@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Impression des tickets : masque tout sauf le ticket ciblé */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-ticket, .print-ticket * {
+    visibility: visible;
+  }
+  .print-ticket {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
